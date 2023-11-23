@@ -1,0 +1,48 @@
+footer{
+    background-color: #112152;
+    color: rgba(238, 238, 238, 0.737);
+    padding: 30px;
+}
+
+li{
+    list-style: none;
+    font-size: 14px;
+
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+h4{
+    font-size: 20px;
+    color: white;
+}
+
+p{
+    font-size: 14px;
+}
+
+.footer-contain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+
+    h4{
+        font-size: 14px;
+    }
+
+    p{
+        font-size: 8px;
+    }
+
+    li{
+        font-size: 10px;
+    }
+
+    @media (max-width: 600px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
