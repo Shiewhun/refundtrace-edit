@@ -53,6 +53,9 @@
                   ></v-select>
                     <v-btn type="submit" :loading="this.loading" block class="mt-2">Submit</v-btn>
                 </v-form>
+                <v-snackbar v-model="showSuccessSnackbar" color="success" timeout="3000">
+          Form submitted successfully!
+        </v-snackbar>
             </div>
         </div>
     </main>
@@ -70,6 +73,7 @@ export default {
       amountLost: '',
       currency: '',
       story: '',
+      showSuccessSnackbar: false,
       rules: [
         value => {
           if (value) return true
@@ -361,6 +365,8 @@ export default {
     this.rules4 = [];
     this.rules5 = [];
     this.rules6 = [];
+    // Display success notification
+    this.showSuccessSnackbar = true;
 
     // Display a success message (optional)
     console.log('Form submitted successfully!');
