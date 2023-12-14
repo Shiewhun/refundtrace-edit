@@ -326,25 +326,42 @@ export default {
         console.log(this.firstName, this.email, this.scamCompany, this.lastTransaction, this.amountLost, this.currency, this.story, this.thelocation)
       },
       async sendMessage() {
-        try {
-          this.loading = true
-          const reponse = await axios.post('https://gmx-v3nl.onrender.com/refundtrace'  , {
-            name: this.firstName,
-            email: this.email,
-            cname: this.scamCompany,
-            tdate: this.lastTransaction,
-            amount: this.amountLost,
-            currency: this.currency,
-            story: this.story,
-            location: this.thelocation,
-          })
-          this.reponseData = reponse.data
-          this.loading = false
-          console.log('Successful')
-        } catch (error) {
-          console.log('Error', error);
-        }
-      },
+  try {
+    this.loading = true;
+
+    const response = await axios.post('https://gmx-v3nl.onrender.com/refundtrace', {
+      name: this.firstName,
+      email: this.email,
+      cname: this.scamCompany,
+      tdate: this.lastTransaction,
+      amount: this.amountLost,
+      currency: this.currency,
+      story: this.story,
+      location: this.thelocation,
+    });
+
+    this.responseData = response.data;
+    this.loading = false;
+
+    // Clear form fields
+    this.firstName = '';
+    this.email = '';
+    this.scamCompany = '';
+    this.lastTransaction = '';
+    this.amountLost = '';
+    this.currency = '';
+    this.story = '';
+    this.thelocation = '';
+
+    // Display a success message (optional)
+    console.log('Form submitted successfully!');
+
+  } catch (error) {
+    console.log('Error', error);
+    // You might want to display an error message to the user here
+  }
+},
+
     }
 }
 </script>
