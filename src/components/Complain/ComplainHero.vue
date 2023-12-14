@@ -353,6 +353,15 @@ export default {
     this.story = '';
     this.thelocation = '';
 
+    // Reset validation rules
+    this.rules = [];
+    this.rules1 = [];
+    this.rules2 = [];
+    this.rules3 = [];
+    this.rules4 = [];
+    this.rules5 = [];
+    this.rules6 = [];
+
     // Display a success message (optional)
     console.log('Form submitted successfully!');
 
